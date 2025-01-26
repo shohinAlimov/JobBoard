@@ -1,0 +1,22 @@
+.navigation {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    color: $color-white;
+
+    &--active {
+      text-decoration: underline;
+    }
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
