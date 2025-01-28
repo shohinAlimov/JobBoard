@@ -1,0 +1,13 @@
+.register-form {
+  max-width: 446px;
+  margin: 0 auto;
+
+  &__submit {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  &__email-continue {
+    width: 100%;
+  }
+}

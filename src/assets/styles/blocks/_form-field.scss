@@ -1,0 +1,37 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  &__label {
+    font-size: 14px;
+    color: #333;
+  }
+
+  &__input {
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: #a0a0a0;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #2c3e50;
+    }
+
+    &--error {
+      border-color: #ff4d4f;
+    }
+  }
+
+  &__error {
+    color: #ff4d4f;
+    font-size: 12px;
+  }
+}

@@ -3,40 +3,46 @@
   padding: 0;
   margin: 0;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   font-size: 16px;
   line-height: 15px;
+  font-weight: 300;
 
   background-color: transparent;
   cursor: pointer;
+
+  border-radius: 8px;
 
   &--primary {
     padding: 10px 27px;
     background-color: $color-white;
     color: $color-catalina-blue;
-    border-radius: 43px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     &-xl {
-      padding: 16px 36px;
+      padding: 15px 35px;
     }
   }
 
   &--secondary {
     padding: 10px 27px;
-    background-color: $color-midnight-express;
+    background-color: $color-catalina-blue;
     color: $color-white;
-    border-radius: 43px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     &-xl {
-      padding: 16px 36px;
+      padding: 15px 35px;
+    }
+  }
+
+  &--third {
+    padding: 10px 27px;
+    background-color: $color-night-rider;
+    color: $color-white;
+
+    &-xl {
+      padding: 15px 35px;
     }
   }
 
