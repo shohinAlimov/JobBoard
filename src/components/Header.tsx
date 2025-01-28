@@ -1,8 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // Import authentication
 import Logo from "../assets/icons/logo.svg";
 import Burger from "../assets/icons/burger menu.svg";
 
 function Header() {
+  const { loggedInUser, logoutUser } = useAuth(); // Get login state & logout function
+
   return (
     <header className="header">
       <div className="container">
@@ -11,29 +14,61 @@ function Header() {
             <Link className="header__logo-link" to="/">
               <img className="header__logo-icon" src={Logo} alt="Taskify Logo" />
             </Link>
+
             <nav className="navigation">
               <ul className="navigation__list">
                 <li className="navigation__item">
-                  <NavLink to="/"
-                    className={({ isActive }) => isActive ? "navigation__link navigation__link--active" : "navigation__link"}
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? "navigation__link navigation__link--active" : "navigation__link"
+                    }
                   >
                     Home
                   </NavLink>
                 </li>
                 <li className="navigation__item">
-                  <NavLink to="/AboutPage"
-                    className={({ isActive }) => isActive ? "navigation__link navigation__link--active" : "navigation__link"}
+                  <NavLink
+                    to="/AboutPage"
+                    className={({ isActive }) =>
+                      isActive ? "navigation__link navigation__link--active" : "navigation__link"
+                    }
                   >
                     About
                   </NavLink>
                 </li>
+                {loggedInUser ? (
+                  <>
+                    <NavLink
+                      to="/DashboardPage"
+                      className={({ isActive }) =>
+                        isActive ? "navigation__link navigation__link--active" : "navigation__link"
+                      }
+                    >
+                      Dashboard
+                    </NavLink>
+                  </>
+                ) : (
+                  <>
+                  </>
+                )}
               </ul>
             </nav>
           </div>
 
           <div className="header__buttons">
-            <Link className="btn btn--primary" to="/LoginPage">Login</Link>
-            <Link className="btn btn--secondary" to="/RegisterPage">Register</Link>
+            {loggedInUser ? (
+              <>
+                <button className="btn btn--secondary" onClick={logoutUser}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link className="btn btn--primary" to="/LoginPage">Login</Link>
+                <Link className="btn btn--secondary" to="/RegisterPage">Register</Link>
+              </>
+            )}
           </div>
 
           <button className="btn header__burger-btn">
@@ -42,7 +77,7 @@ function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
 export default Header;

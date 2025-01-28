@@ -7,9 +7,18 @@
 @import "./global/visually-hidden";
 @import "./global/variables";
 
+/* Reusable */
+/* _______________________________ */
+@import "./blocks/btn";
+@import "./blocks/form-field";
+
 /* Blocks */
 /* _______________________________ */
 @import "./blocks/header";
 @import "./blocks/navigation";
-@import "./blocks/btn";
 @import "./blocks/hero";
+@import "./blocks/login-form";
+@import "./blocks/login-page";
+@import "./blocks/register-form";
+@import "./blocks/register-page";
+@import "./blocks/notification";
